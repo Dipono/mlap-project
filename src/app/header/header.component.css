@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    position: relative;;
+}
+
+.content-header{
+	display: flex;
+	background-color: grey;
+}
+.content-header img{
+	height: 70px;
+	width: 100px;
+}
+
+.content-header label{
+	border: 2px grey solid;
+}
+
+.content-body{
+    position: absolute;
+    right: 1%;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+li{
+    margin: 25px 15px 0 15px;
+}

@@ -1,0 +1,85 @@
+.contect-head{
+	margin-top: 15px;
+}
+
+video{
+	margin: 0 5px;
+}
+
+#contect-body{
+	margin-top: 25px;
+	display: flex;
+}
+
+
+
+#bio{
+	margin-left: 15px;
+}
+
+h2{margin: 15px 0;}
+
+p{
+	margin: 15px 0;
+}
+
+#image img{
+	width: 250px;
+	height: 250px;
+}
+
+button{
+	width: 80px;
+	height: 45px;
+	background-color: pink;
+	color: black;
+	font-size: 1em;
+	font-weight: 600;
+	border-radius: 9%;
+}
+
+@media only screen and (max-width: 1200px) {
+    header{
+    display: flex;
+    flex-direction: column;
+    }
+
+    header ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+    }
+
+    contect-head{
+    display: flex;
+    flex-direction: column;
+    }
+    .contect-head label{
+        text-align: center;
+
+    }
+
+    video{
+        width: 750px;
+        height: 650px;
+        margin-left: 200px;
+    }
+
+    #contect-body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #image{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    video{
+        margin-left: 100px;
+    }
+}
