@@ -1,43 +1,78 @@
-.contect-head{
-	margin-top: 15px;
+.contect-head {
+  margin-top: 15px;
 }
 
-video{
-	margin: 0 5px;
+.contect-head {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  height: 500px;
+}
+.contect-head video {
+  position: absolute;
+  width: auto;
+  min-width: 100%;
+  height: auto;
 }
 
-#contect-body{
-	margin-top: 25px;
-	display: flex;
+.my-content {
+  margin-top: 25px;
+  display: flex;
 }
 
-
-
-#bio{
-	margin-left: 15px;
+#bio {
+  margin-left: 15px;
 }
 
-h2{margin: 15px 0;}
-
-p{
-	margin: 15px 0;
+h2 {
+  margin: 15px 0;
 }
 
-#image img{
-	width: 250px;
-	height: 250px;
+p {
+  margin: 15px 0;
 }
 
-button{
-	width: 80px;
-	height: 45px;
-	background-color: pink;
-	color: black;
-	font-size: 1em;
-	font-weight: 600;
-	border-radius: 9%;
+#image img {
+  width: 250px;
+  height: 250px;
 }
 
+button {
+    margin-bottom: 60px;;
+  width: 80px;
+  height: 45px;
+  background-color: pink;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 9%;
+}
+
+@media (max-width: 1280px) {
+  .contect-head {
+    position: relative;
+    padding-bottom: 40%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+  }
+  .contect-head video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contect-body{
+      display: flex;
+      flex-direction: column;
+  }
+}
+/*
 @media only screen and (max-width: 1200px) {
     header{
     display: flex;
@@ -82,4 +117,4 @@ button{
     video{
         margin-left: 100px;
     }
-}
+}*/
