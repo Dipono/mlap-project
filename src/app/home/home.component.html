@@ -1,40 +1,34 @@
 <app-header></app-header>
 
 <body>
-  <!---->
 
   <content>
     <div class="contect-head">
       <video controls>
-        <source src="../../assets/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <source src={{videossource.urlPath}} type={{videossource.typeOfFile}} />
+		{{videossource.unsupportedMessage}}
       </video>
     </div>
 
     <div class="contect-body">
       <div id="bio">
-        <h2>Dipono Joel Manasoe</h2>
-			<div class="my-content">
-				<div id="info">
-					<p>
-					  I am Dipono Joel Manasoe, born on the 1st of April 1997, I reside in
-					  Pretoria Mamelod.
-					</p>
-					<p>
-					  I completed my Matric in 2016 and studied at Tshwane University of
-					  Technology from 2017 to 2021, completed my National Diploma in
-					  Information Technology(Software Development)
-					</p>
-				  </div>
-				  <div id="image">
-					<img src="../../assets/Dipono.jpg" />
-				  </div>
+        <h2>{{description.fullName}}</h2>
+		<div class="my-content">
+			<div id="info">
+				<p>
+				  {{description.introduction}}
+				</p>
+				<p>
+				  {{description.bodyDescription}}
+				</p>
+				<button>Button</button>
+	
 			</div>
+			<div id="image">
+				<img src={{imageSource.urlpath}} alt="imageSource.name"/>
+			</div>
+		</div>
       </div>
-	  <div class="">
-		<button>Button</button>
-
-	  </div>
     </div>
   </content>
 </body>

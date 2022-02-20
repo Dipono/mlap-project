@@ -1,4 +1,14 @@
 <table>
+    <tr >
+        <td *ngFor="let links of socialLinks">
+            <a href={{links.link}}><img src={{links.imagePath}} alt="links.name"></a>
+        </td>
+        <td>
+            <label>{{contactNumber.stringCall}} : {{contactNumber.number}}</label>
+        </td>
+    </tr>
+
+    <!--
     <tr>
         <td>
             <a href="https://www.facebook.com/buti.lebute.1"><img src="../../assets/facebook.png"></a>					
@@ -12,5 +22,5 @@
         <td>
             <label>Call : 071 191 5807</label>
         </td>
-    </tr>
+    </tr>-->
 </table>
