@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/mlap-project",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",

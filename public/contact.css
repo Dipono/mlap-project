@@ -1,0 +1,28 @@
+.content{
+    margin-left: 15px;
+}
+
+.content tr{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.content td{
+    margin-left: 50px;
+}
+
+input{
+    width: 200px;
+    height: 30px;
+}
+
+button{
+    width: 150px;
+    height: 45px;
+    background-color: pink;
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 9%;
+}

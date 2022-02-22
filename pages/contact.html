@@ -1,0 +1,157 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MLab Project</title>
+	<link rel="stylesheet" href="../styles/contact.css">
+	<link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<div class="header">
+    <div class="header-logo">
+        <label>
+          <a href="" id="logoRef"><img src='' alt='' id="logo"/></a>
+        </label>
+      </div>
+    
+      <div class="header-body">
+        <ul>
+            <li>
+              <a class="nav-link" href='' id="link1"></a>
+            </li>
+            <li>
+            <a class="nav-link" href='' id="link2"></a>
+            </li>
+            <li>
+            <a class="nav-link" href='' id="link3"></a>
+            </li>
+        </ul>
+      </div>
+</div>
+
+<body>
+	<content class="content">
+	  	<form action="" method="POST" id="myForm">
+
+	    <table class="contact">
+	      <tr>
+	        <td><input type="text" name="surname" id="surname" placeholder="Surname" /></td>
+	      </tr>
+
+	      <tr>
+	        <td><input type="text" name="name" id="name" placeholder="Name" /></td>
+	      </tr>
+
+	      <tr>
+	        <td><input type="email" name="email" id="email" placeholder="Enail" /></td>
+	      </tr>
+
+	      <tr>
+	        <td>Message</td>
+	        <td><textarea rows="10" cols="25" name="message" id="message" placeholder="Type Text Here" ></textarea></td>
+	      </tr>
+
+	      <tr>
+	        <td><button onclick="formSubmit()">Submit</button></td>
+	      </tr>
+	    </table>
+	  </form>
+	</content>
+</body>
+
+<table class="table">
+    <tr >
+        <td>
+            <a href='#' id="linkId1"><img src='' alt="" id="social1" ></a>
+        </td>
+         <td>
+            <a href='#' id="linkId2"><img src='' alt="" id="social2"></a>
+        </td>
+         <td>
+            <a href='#' id="linkId3"><img src='' alt="" id="social3"></a>
+        </td>
+        <td>
+            <label id="my-contact"></label>
+        </td>
+    </tr>
+ </table>
+
+ <script type="text/javascript">
+     // Header
+    imageSource = {name:'logo', urlpath:''};
+    navigation=[{name:'Home', nav:'../public/index.html',myId:'link1'},
+            {name:'About Me', nav:'./about.html', myId:'link2'},
+            {name:'Contact Us', nav:'./contact.html',myId:'link3'}]
+
+
+    imageSource.urlpath = '../assets/logo.PNG';
+
+    document.getElementById('logo').alt = imageSource.name;
+    document.getElementById('logo').src = imageSource.urlpath;
+    document.getElementById('logoRef').href = navigation[0].nav
+
+    for(var linkIndex = 0; linkIndex < navigation.length;linkIndex++){
+        document.getElementById(navigation[linkIndex].myId).innerHTML = navigation[linkIndex].name;
+        document.getElementById(navigation[linkIndex].myId).href = navigation[linkIndex].nav;
+    }
+
+
+    // Footer
+    socialLinks = [{name:"facebook", link:'https://www.facebook.com/buti.lebute.1', imagePath:'', socialId:'social1', idLink:'linkId1'}, 
+                    {name:"linkedin", link:'https://www.linkedin.com/in/joel-manasoe-266128184/',  imagePath:'',socialId:'social2', idLink:'linkId2'}, 
+                    {name:"twitter", link:'https://twitter.com/ButiJoel2', imagePath:'',socialId:'social3', idLink:'linkId3'}]
+
+    let contactNumber = "0711915807"
+    for(var socialIndex = 0; socialIndex < socialLinks.length;socialIndex++){
+    socialLinks[socialIndex].imagePath = "../assets/"+socialLinks[socialIndex].name+".png";
+        
+    document.getElementById(socialLinks[socialIndex].socialId).src = socialLinks[socialIndex].imagePath;
+    document.getElementById(socialLinks[socialIndex].socialId).alt = socialLinks[socialIndex].name;
+    document.getElementById(socialLinks[socialIndex].idLink).href = socialLinks[socialIndex].link;
+
+        
+    }
+
+    document.getElementById('my-contact').innerHTML = "Call : "+contactNumber;
+</script>
+
+<script type="text/javascript">
+
+	function formSubmit() {
+		userInput={
+	    surname:'',
+	    name:'',
+	    email:'',
+	    message:''
+	  }
+
+	    var isAlphabet = /^[a-zA-Z]+$/;
+ 
+	    userInput.surname = document.getElementById('surname').value;
+	    userInput.name = document.getElementById('name').value;
+	    userInput.email = document.getElementById('email').value;
+	    userInput.message = document.getElementById('message').value;
+
+	    if(!userInput.surname){ return alert('Enter Surname')}
+	    if(!userInput.surname.match(isAlphabet)){ return alert('Surname Must contain all alphabet') };
+	    if(userInput.surname.length < 3){return alert('Surname field must be at least 3 characters') };
+
+	    if(!userInput.name){ return alert('Enter Name')}
+	    if(!userInput.name.match(isAlphabet)){ return alert('Name Must contain all alphabet') };
+	    if(userInput.name.length < 3){return alert('Name field must be at least 3 characters') };
+
+	    if(!userInput.email) return alert('Enter Email Address');
+	    const regEx = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/;
+	    if (!regEx.test(userInput.email)) return alert('Enter valid Email Address');
+	    if(userInput.email.length < 8) return alert('Email Address must have at least 10 characters');
+
+	    if(!userInput.message){ return alert('Enter Message')}
+
+		let action = "https://formspree.io/f/xpzbdoog";
+
+		document.getElementById('myForm').action = action;
+
+	}
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MLab Project</title>
+	<link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<div class="header">
+    <div class="header-logo">
+        <label>
+          <a href="" id="logoRef"><img src='' alt='' id="logo"/></a>
+        </label>
+      </div>
+    
+      <div class="header-body">
+        <ul>
+            <li>
+              <a class="nav-link" href='' id="link1"></a>
+            </li>
+            <li>
+            <a class="nav-link" href='' id="link2"></a>
+            </li>
+            <li>
+            <a class="nav-link" href='' id="link3"></a>
+            </li>
+        </ul>
+      </div>
+</div>
+
+<body>
+
+	<content class="about">
+	    <p id="introduction"></p>
+	    <p id="firstDescription"></p>
+	    <p id="secondDescription"></p>
+	</content>
+
+</body>
+
+<table class="table">
+    <tr >
+        <td>
+            <a href='#' id="linkId1"><img src='' alt="" id="social1" ></a>
+        </td>
+         <td>
+            <a href='#' id="linkId2"><img src='' alt="" id="social2"></a>
+        </td>
+         <td>
+            <a href='#' id="linkId3"><img src='' alt="" id="social3"></a>
+        </td>
+        <td>
+            <label id="my-contact"></label>
+        </td>
+    </tr>
+  </table>
+
+<script type="text/javascript">
+     // Header
+    imageSource = {name:'logo', urlpath:''};
+    navigation=[{name:'Home', nav:'./index.html',myId:'link1'},
+            {name:'About Me', nav:'./about.html', myId:'link2'},
+            {name:'Contact Us', nav:'./contact.html',myId:'link3'}]
+
+
+    imageSource.urlpath = './logo.PNG';
+
+    document.getElementById('logo').alt = imageSource.name;
+    document.getElementById('logo').src = imageSource.urlpath;
+    document.getElementById('logoRef').href = navigation[0].nav
+
+    for(var linkIndex = 0; linkIndex < navigation.length;linkIndex++){
+        document.getElementById(navigation[linkIndex].myId).innerHTML = navigation[linkIndex].name;
+        document.getElementById(navigation[linkIndex].myId).href = navigation[linkIndex].nav;
+    }
+
+
+    // Footer
+    socialLinks = [{name:"facebook", link:'https://www.facebook.com/buti.lebute.1', imagePath:'', socialId:'social1', idLink:'linkId1'}, 
+                    {name:"linkedin", link:'https://www.linkedin.com/in/joel-manasoe-266128184/',  imagePath:'',socialId:'social2', idLink:'linkId2'}, 
+                    {name:"twitter", link:'https://twitter.com/ButiJoel2', imagePath:'',socialId:'social3', idLink:'linkId3'}]
+
+    let contactNumber = "0711915807"
+    for(var socialIndex = 0; socialIndex < socialLinks.length;socialIndex++){
+    socialLinks[socialIndex].imagePath = ".//"+socialLinks[socialIndex].name+".png";
+        
+    document.getElementById(socialLinks[socialIndex].socialId).src = socialLinks[socialIndex].imagePath;
+    document.getElementById(socialLinks[socialIndex].socialId).alt = socialLinks[socialIndex].name;
+    document.getElementById(socialLinks[socialIndex].idLink).href = socialLinks[socialIndex].link;
+
+        
+    }
+
+    document.getElementById('my-contact').innerHTML = "Call : "+contactNumber;
+</script>
+
+<script type="text/javascript">
+        aboutMe = {introduction:'', firstDescription:'', secondDescription:''};
+
+        aboutMe.introduction = 'I am Dipono Joel Manasoe, born on the 1st of April 1997, I reside in Pretoria Mamelod.'
+        aboutMe.firstDescription = `In 2017 I studied Information Technology at Tshwane University of 
+                                    Technology, 2018 I was specializing in Software Development. 2019 
+                                    while I was looking for in-service training I was attending the program named 
+                                    Fourth Industrial Revolution (4IR) Skills from company named Firtech, I was also 
+                                    doing software development where it help me to enhance my skills as a developer, 
+                                    at the end of the programme I got two badges one for MTA - Introduction to 
+                                    Programming(Python) and the other MTA - Software Development Fundamentals(C#).`
+
+        aboutMe.secondDescription = `End of 2020 I scored myself an internship at ICEP where I was a software developer,                            which it lasted for 6 months, during this internship I got Agile42(Introduction 
+                                    to Agile and Scrum) budge and 12 badges from AWS. In the year 2021 is the year 
+                                    I completed my National Diploma (Software Development) qualification from 
+                                    Tshwane University of Technology.`
+
+        document.getElementById('introduction').innerHTML = aboutMe.introduction;
+        document.getElementById('firstDescription').innerHTML = aboutMe.firstDescription;
+        document.getElementById('secondDescription').innerHTML = aboutMe.secondDescription;
+</script>
+
+</html>
